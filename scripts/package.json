@@ -1,0 +1,20 @@
+{
+  "name": "mps_interests_scrapers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.0.0",
+    "lodash": "^4.17.11",
+    "mysql": "^2.17.1",
+    "node-fetch": "^2.6.0",
+    "util": "^0.12.0",
+    "words-to-numbers": "^1.5.1"
+  }
+}
