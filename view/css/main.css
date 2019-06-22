@@ -1,0 +1,100 @@
+body {
+  background-color: #EEE;
+}
+
+.jumbotron {
+  background-color: #AAA;
+  margin-bottom: 0;
+}
+
+#content {
+  min-height: 500px;
+  margin-top: 0;
+  background-color: #FFF;
+}
+
+.centered {
+  text-align: center;
+}
+
+/*MP Search Styles */
+.mp_card {
+  height: 420px;
+  width: 300px;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.1),0 6px 60px rgba(0,0,0,0.1);
+}
+
+.mp_card::after {
+  opacity: 0.1;
+}
+
+.card_content {
+  height: 390px;
+  border: solid black 2px;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.card_head {
+  background-color: #00aeef;
+  color: #FFF;
+  font-family: 'Balthazar', serif;
+  text-align: center;
+  padding: 7px 5px 10px 5px;
+}
+
+.card_head p.party {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: #000;
+}
+
+.card_head p.name {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  font-size: 27px;
+  line-height: 35px;
+}
+
+.card_body {
+  padding: 10px 10px 0 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 17px;
+  line-height: 21px;
+}
+
+.card_head img {
+  float: left;
+  height: 55px;
+  border-radius: 100px;
+  margin: 2px 0 0 0;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+/* Search Styles */
+#mp_search {
+  margin: 20px;
+}
+
+.search_result {
+  margin: 10px 0 0 0;
+}
+
+.search_result p {
+  margin: 0;
+  padding: 0;
+}
+
+.search_result_section_title {
+  font-weight: bold;
+}
+
+.highlight {
+  background-color: #f7f737;
+}

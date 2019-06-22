@@ -1,20 +1,16 @@
-require('dotenv').config()
-
 const fetch = require("node-fetch")
-const util = require('util')
 const cheerio = require('cheerio')
-const wordsToNumbers = require('words-to-numbers')
-const _ = require('lodash');
+const _ = require('lodash')
 
-// let mysql = require('mysql')
-// let pool  = mysql.createPool({
-//   connectionLimit : 100,
-//   host            : process.env.DB_HOST,
-//   user            : process.env.DB_USER,
-//   password        : process.env.DB_PASS,
-//   database        : process.env.DB_DATABASE,
-// })
-// pool.query = util.promisify(pool.query)
+const Mp = require('./Mp')
+
+const Text = require('./Text')
+
+const Properties = require('./Properties')
+const Jobs = require('./Jobs')
+const Shares = require('./Shares')
+const Donations = require('./Donations')
+const Visits = require('./Visits')
 
 const date_code = 190603
 
@@ -33,7 +29,7 @@ function getLinks($) {
   return links
 }
 
-function createSections(lines) {
+function createSections(name, id, lines) {
   let section_title = ""
   section_lines = []
 
@@ -44,72 +40,54 @@ function createSections(lines) {
       section_lines.push(line)
     }
   }
-
   let sections = _.mapValues(_.groupBy(section_lines, 'section'))
 
+  text = new Text(id, name)
+  text.addAll(section_lines)
+
   if(sections["1. Employment and earnings"]) {
-    addEmployment(sections["1. Employment and earnings"])
+    lines = sections["1. Employment and earnings"]
+    let jobs = new Jobs(name, id)
+    jobs.parse(lines)
+    jobs.addAll()
   }
-  else if(sections["6. Land and property portfolio: (i) value over £100,000 and/or (ii) giving rental income of over £10,000 a year"]) {
-    for(line of sections["6. Land and property portfolio: (i) value over £100,000 and/or (ii) giving rental income of over £10,000 a year"]) {
-      //addProperty(line.text)
-    }
+  if(sections["2. (a) Support linked to an MP but received by a local party organisation or indirectly via a central party organisation"]) {
+    lines = sections["2. (a) Support linked to an MP but received by a local party organisation or indirectly via a central party organisation"]
+    let donations = new Donations(name, id)
+    donations.parse(lines)
+    donations.addAll()
+  }
+  if(sections["2. (b) Any other support not included in Category 2(a)"]) {
+    lines = sections["2. (b) Any other support not included in Category 2(a)"]
+    let donations = new Donations(name, id)
+    donations.parse(lines)
+    donations.addAll()
+  }
+  if(sections["4. Visits outside the UK"]) {
+    lines = sections["4. Visits outside the UK"]
+    let visits = new Visits(name, id)
+    visits.parse(lines)
+    visits.addAll()
+  }
+  if(sections["6. Land and property portfolio: (i) value over £100,000 and/or (ii) giving rental income of over £10,000 a year"]) {
+    lines = sections["6. Land and property portfolio: (i) value over £100,000 and/or (ii) giving rental income of over £10,000 a year"]
+    let properties = new Properties(name, id)
+    properties.parse(lines)
+    properties.addAll()
+  }
+  if(sections["7. (i) Shareholdings: over 15% of issued share capital"]) {
+    lines = sections["7. (i) Shareholdings: over 15% of issued share capital"]
+    let shares = new Shares(name, id)
+    shares.parse(lines)
+    shares.addAll()
+  }
+  if(sections["7. (ii) Other shareholdings, valued at more than £70,000"]) {
+    lines = sections["7. (ii) Other shareholdings, valued at more than £70,000"]
+    let shares = new Shares(name, id, true)
+    shares.parse(lines)
+    shares.addAll()
   }
 
-}
-
-function addEmployment(lines) {
-  lines.shift()
-  let jobs = []
-  let job_title = null
-  let pay_info = []
-
-  for(line of lines) {
-    if(line.class == "indent") {
-      if(job_title != null) { jobs.push({"title": job_title, "pay_info": pay_info}) }
-      job_title = line.text
-      pay_info = []
-    }
-    else if(line.class == "indent2") {
-      pay_info.push(line.text)
-    }
-  }
-  if(job_title != null) { jobs.push({"title": job_title, "pay_info": pay_info}) }
-
-  console.log(jobs)
-
-}
-
-function addProperty(line) {
-  let count = 1
-  let rented = false
-  let holiday = false
-  let house = false
-  let flat = false
-  let farm = false
-  let residential = false
-  let commercial = false
-  let location = null
-
-  if(line.match("(ii)")) {rented = true}
-  if(line.match(/holiday/gi)) {holiday = true}
-  if(line.match(/\bhouse\b|cottage/gi)) {house = true}
-  if(line.match(/\bflat\b|apartment/gi)) {flat = true}
-  if(line.match(/\bfarm\b/gi)) {farm = true}
-  if(line.match(/residential/gi)) {residential = true}
-  if(line.match(/commercial|\bshop\b/gi)) {commercial = true}
-  if(line.match(/\bshared\b|\bshare\b/gi)) {shared = true}
-
-  count_match = line.match(/four|eight|(?:fiv|(?:ni|o)n)e|t(?:wo|hree)|s(?:ix|even)/gi)
-  count_match ? count = wordsToNumbers.wordsToNumbers(count_match[0]) : 1
-
-  location_regex = (/(in|near) (\w\w+)/gi)
-  location_match = location_regex.exec(line)
-  location_match ? location = location_match[2] : "null"
-
-  data = {"line": line, "count": count, "location": location, "rented": rented, "holiday": holiday, "house": house, "flat": flat, "farm": farm, "residential": residential, "commercial": commercial}
-
-  console.log(data)
 }
 
 (async function() {
@@ -118,10 +96,12 @@ function addProperty(line) {
 
   const mps = getLinks($)
 
-  let i = 0
   for(mp of mps) {
     console.log("-------------------------------------")
     console.log(mp.name)
+
+    let mp_obj = new Mp(mp.name)
+    let id = await mp_obj.add()
 
     let mp_html = await getHTML("https://publications.parliament.uk/pa/cm/cmregmem/" + date_code + "/" + mp.link)
     const $ = cheerio.load(mp_html)
@@ -133,10 +113,7 @@ function addProperty(line) {
     })
 
     lines.shift() // The first line is always the name of the MP so if can be removed
-    createSections(lines)
-
-    // i++
-    // if(i==100) {process.exit()}
+    createSections(mp.name, id, lines)
   }
 
 }())
