@@ -15,20 +15,22 @@ let pool = mysql.createPool({
 pool.query = util.promisify(pool.query)
 
 function add_to_db(row) {
+  console.log(row[3])
+
   let first_name = row[1]
   let last_name = row[2]
   let party = row[3]
   let constit = row[4]
 
-  let sql = "UPDATE mps set party = ?, constit = ? WHERE last_name LIKE ? AND first_name LIKE ?"
-  let inserts = [party, constit, "%" + last_name + "%", "%" + last_name + "%"]
+  let sql = "UPDATE mps set party = ?, constit = ? WHERE (last_name LIKE ? AND first_name LIKE ?)"
+  let inserts = [party, constit, "%" + last_name + "%", "%" + first_name + "%"]
   sql = mysql.format(sql, inserts)
   return pool.query(sql)
+
+  console.log(row)
 }
 
 (async function() {
-
-  let mps_arr = []
 
   fs.createReadStream('csv/mps.csv')
     .pipe(csv.parse())

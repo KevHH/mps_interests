@@ -1,10 +1,88 @@
-body {
-  background-color: #EEE;
+html {
+  margin: 0;
+  padding: 0;
 }
 
-.jumbotron {
+body {
+  background-color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.badge {
+  color: #FFF;
+}
+
+/* Charts general */
+
+/* Banner */
+
+.banner {
+  height: 100vh;
+  width: 100%;
   background-color: #AAA;
   margin-bottom: 0;
+  background-image: url("/render_1.png");
+  background-position: center;
+}
+
+.banner h1, h2 {
+  margin: 0 0 0 50px;
+  padding: 30px 20px 0px 0px;
+  font-size: 100px;
+  font-weight: bold;
+  color: #55929B;
+  border-bottom: 7px solid #55929B;
+  width: 50%;
+}
+
+.banner h2 {
+  font-size: 35px;
+  padding: 15px 20px 15px 10px;
+  font-weight: 200;
+  border: none;
+}
+
+.quote {
+  margin: 25px 0 25px 0;
+  padding: 20px 20px 20px 20px;
+  border-left: 5px solid #55929B;
+  background-color: #f8f8f4;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.quote h2 {
+  font-size: 22px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.quote .quote_body {
+  color: #777;
+  margin: 0 0 15px 0;
+  font-weight: 300;
+}
+
+.quote .quote_title {
+  text-align: right;
+  font-size: 20px;
+}
+
+.quote .big_quote_mark {
+  font-weight: 600;
+}
+
+.container {
+  background-color: #FFF;
+  padding: 20px 30px 20px 30px;
 }
 
 #content {
@@ -17,17 +95,165 @@ body {
   text-align: center;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+/* Tables */
+
+caption {
+  color: #000;
+  font-weight: bold;
+}
+
+th {
+  font-size: 16px;
+}
+
+td {
+  font-size: 16px;
+}
+
+.badge {
+  font-size: 16px;
+}
+
+.no_margin {
+  margin: 0;
+}
+.no_pad {
+  padding: 0;
+}
+
 /*MP Search Styles */
+
+/* Mini pie chart */
+.mini_pie {
+  width: 100%;
+  height: 100%;
+}
+
+/* Cards */
+
+/* Stat cards */
+.stat_card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 0px 10px 30px 10px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 2px 10px 10px 2px;
+  border-left: 20px solid #55929B;
+  background-color: #f8f8f4;
+}
+
+.stat_card p {
+  margin: 0;
+}
+
+.stat_color {
+  color: #55929B;
+}
+
+.sub_color {
+  color: #777;
+}
+
+.stat_big {
+  font-size: 100px;
+  font-weight: bold;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 100px;
+}
+
+.stat_mid {
+  font-size: 33px;
+  font-weight: bold;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 33px;
+}
+
+.stat_small {
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+}
+
+.stat_sub {
+  font-size: 20px;
+  font-weight: 200;
+  line-height:28px;
+  margin: 0;
+  padding: 0;
+  color: #777;
+}
+
+.stat_card_head {
+  font-weight: bold;
+  margin: 15px 0 20px 0;
+  font-size: 25px;
+}
+
+.stat_card .footnote {
+  color: #AAA;
+  font-size: 13px;
+}
+
+.stat_holder {
+  padding: 20px 20px 20px 20px;
+}
+
+.slim_right_border {
+  border-right: 1px solid #888;
+}
+
+.stat_card h2, h3 {
+  color: black;
+  border: none;
+  color: #777;
+}
+
+.stat_card .stat_subtitle {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.stat_card h2 {
+  width: 100%;
+  color: #55929B
+}
+
+#main_tables.stat_card {
+  margin-top: 0;
+}
+
+.stat_text {
+  font-size: 20px;
+}
+
+.stat_small_text {
+  font-size: 15px;
+}
+
+/* MP cards */
+.card_center {
+  margin: 0 auto;
+}
+
 .mp_card {
+  background-color: #f2f3ea;
   height: 420px;
   width: 300px;
   padding: 15px;
   border-radius: 7px;
-  box-shadow: 0 10px 10px rgba(0,0,0,0.1),0 6px 60px rgba(0,0,0,0.1);
-}
-
-.mp_card::after {
-  opacity: 0.1;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.21);
+  margin: 0 auto;
 }
 
 .card_content {
@@ -57,15 +283,18 @@ body {
   font-weight: bold;
   margin: 0;
   padding: 0;
-  font-size: 27px;
+  font-size: 28px;
   line-height: 35px;
 }
 
 .card_body {
   padding: 10px 10px 0 10px;
   font-family: 'Nunito', sans-serif;
+}
+
+.card_body p {
   font-size: 17px;
-  line-height: 21px;
+  line-height: 17px;
 }
 
 .card_head img {
@@ -78,17 +307,66 @@ body {
 }
 
 /* Search Styles */
+#search_outer_container {
+  background-color: #55929b;
+}
+#search_container {
+  background-color: #FFF;
+}
+
+#search {
+}
+
+.search_box {
+  width: 100%;
+  border: 1px solid #d0d0d0;
+  padding: 8px 8px;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  color: #303030;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 18px;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
 #mp_search {
-  margin: 20px;
+}
+
+#mp_search_results {
+  min-height: 400px;
+}
+
+#search_results {
+  max-height: 500px;
+  overflow: scroll;
 }
 
 .search_result {
   margin: 10px 0 0 0;
+  font-size: 10px;
+  border-left: 5px solid black;
+  padding: 10px 5px 10px 10px;
+  background-color: #f2f3ea !important;
+}
+
+.search_result_name {
+  font-size: 17px;
+  font-weight: bold;
 }
 
 .search_result p {
   margin: 0;
   padding: 0;
+  font-size: 15px;
+}
+
+.search_result .badge {
+  font-size: 15px;
 }
 
 .search_result_section_title {
@@ -97,4 +375,155 @@ body {
 
 .highlight {
   background-color: #f7f737;
+}
+
+/* Charts */
+.chart_title {
+  width: 100%;
+  font-size: 25px;
+  border-bottom-width: 3px;
+  padding: 0 0 0px 0;
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+}
+
+/* Pay swarm */
+#pay_swarm_chart .axis path,
+#pay_swarm_chart .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+#pay_swarm_chart .axis text {
+  font: 10px sans-serif;
+}
+
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  background-color: #FFF;
+  border-left-style: solid;
+  border-left-width: 10px;
+  padding: 5px 10px 5px 10px;
+  min-width: 400px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.21);
+}
+
+.bar_chart_btn {
+  margin: 0 10px 10px 0px;
+  padding: 2px 10px 2px 10px;
+  border-radius: 20px;
+  float: left;
+  border: 1px solid #777;
+  cursor: pointer;
+  font-weight: bold;
+  color: #777;
+}
+.bar_chart_btn.active {
+  background-color: #55929b;
+  color: #FFF;
+}
+
+/* Property circles */
+#property_shares_chart {
+  position: relative;
+}
+#property_jobs_chart {
+  position: relative;
+}
+#property_donations_chart {
+  position: relative;
+}
+#visits_map {
+  position: relative;
+}
+#property_map {
+  position: relative;
+}
+
+/* Party Classes */
+
+.Conservative {
+  background-color: #00aadd;
+  border-color: #00aadd;
+  fill: #00aadd;
+  stroke: #00aadd;
+}
+.Labour {
+  background-color: #dc241f;
+  border-color: #dc241f;
+  fill: #dc241f;
+  stroke: #dc241f;
+}
+.Liberal{
+  background-color: #fdbb30;
+  border-color: #fdbb30;
+  fill: #fdbb30;
+  stroke: #fdbb30;
+}
+.Scottish, .SNP {
+  background-color: #d6d600;
+  border-color: #d6d600;
+  fill: #d6d600;
+  stroke: #d6d600;
+}
+.Green {
+  background-color: #99cc33;
+  border-color: #99cc33;
+  fill: #99cc33;
+  stroke: #99cc33;
+}
+.Sinn {
+  background-color: #008800;
+  border-color: #008800;
+  fill: #008800;
+  stroke: #008800;
+}
+.SDLP {
+  background-color: #99ff66;
+  border-color: #99ff66;
+  fill: #99ff66;
+  stroke: #99ff66;
+}
+.Plaid {
+  background-color: #008142;
+  border-color: #008142;
+  fill: #008142;
+  stroke: #008142;
+}
+.DUP {
+  background-color: #d46a4c;
+  border-color: #d46a4c;
+  fill: #d46a4c;
+  stroke: #d46a4c;
+}
+.Alliance {
+  background-color: #ffd700;
+  border-color: #ffd700;
+  fill: #ffd700;
+  stroke: #ffd700;
+}
+.UK {
+  background-color: #6f288c;
+  border-color: #6f288c;
+  fill: #6f288c;
+  stroke: #6f288c;
+}
+.Social {
+  background-color: #016E51;
+  border-color: #016E51;
+  fill: #016E51;
+  stroke: #016E51;
+}
+.Ulster {
+  background-color: #8888EE;
+  border-color: #8888EE;
+  fill: #8888EE;
+  stroke: #8888EE;
+}
+.Independent {
+  background-color: #CCCCCC;
+  border-color: #CCCCCC;
+  fill: #CCCCCC;
+  stroke: #CCCCCC;
 }

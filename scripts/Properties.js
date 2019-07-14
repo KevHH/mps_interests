@@ -48,7 +48,7 @@ class Properties {
       let count_match = line.text.match(/(four|eight|(?:fiv|(?:ni|o)n)e|t(?:wo|hree)|s(?:ix|even))(?! bedroomed| bedroom)/gi)
       count_match ? count = wordsToNumbers.wordsToNumbers(count_match[0]) : 1
 
-      let location_regex = (/(in|near|at) (?!building|one |two |three |four |five|to |total |holdiday )(\w\w+)/gi)
+      let location_regex = (/( in| near| at) (?!building|one |two |three |four |five|to |total |holdiday )(\w\w+)/gi)
       let location_match = location_regex.exec(line.text)
       location_match ? location = location_match[2] : "null"
 

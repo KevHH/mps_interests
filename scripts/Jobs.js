@@ -45,34 +45,46 @@ class Jobs {
       let employer_match = employer_regex.exec(line.text)
       employer_match ? employer = employer_match[2] : "null"
 
-      let pay_year_regex = /£([\d,\.]+)( gross a | \(gross\) a | a | per | plus VAT a | \(plus VAT\) a | )(year|annum|annually)/gi
-      let pay_year_match = pay_year_regex.exec(line.text)
-      if(pay_year_match) {pay = +Number(pay_year_match[1].replace(",","").replace(/\.$/, "")).toFixed(2)}
-
-      //Monthly
-      if(pay == 0) {
-        let pay_month_regex = /£([\d,\.]+) (gross a|\(gross\) a|a|per|per calendar|paid in) month/gi
-        let pay_month_match = pay_month_regex.exec(line.text)
-        if(pay_month_match) {pay = Number( pay_month_match[1].replace(",","").replace(/\.$/, "") ).toFixed(2) * 12}
-      }
-      //Quarterly
-      if(pay == 0) {
-        let pay_quarter_regex = /£([\d,\.]+)( gross a | \(gross\) a | a | per | paid per | paid in a | every | )(quarter)/gi
-        let pay_quarter_match = pay_quarter_regex.exec(line.text)
-        if(pay_quarter_match) {pay = Number(pay_quarter_match[1].replace(",","").replace(/\.$/, "")).toFixed(2) * 4}
-      }
-      //Fallback
-      if(pay == 0) {
-        let pay_regex = (/£([\d,\.]+)/gi)
-        let pay_match = pay_regex.exec(line.text)
-        if(pay_match) {pay = +Number(pay_match[1].replace(",","").replace(/\.$/, "")).toFixed(2)}
-      }
-
-      if (pay == NaN) {pay = 0}
+      pay = this.findPay(line)
 
       jobs.push({"text": line.text, "title": job_title, "info": job_info, "employer": employer, "pay": pay})
     }
     this.jobs = jobs
+  }
+
+  findPay(line) {
+    let pay = 0
+    //Yearly
+    let pay_year_regex = /£([\d,\.]+)( gross a | \(gross\) a | a | per | plus VAT a | \(plus VAT\) a | )(year|annum|annually)/gi
+    let pay_year_match = pay_year_regex.exec(line.text)
+    if(pay_year_match) {pay = +Number(pay_year_match[1].replace(",","").replace(/\.$/, "")).toFixed(2)}
+    //Monthly
+    if(pay == 0) {
+      let pay_month_regex = /£([\d,\.]+) (gross a|\(gross\) a|a|per|per calendar|paid in) month/gi
+      let pay_month_match = pay_month_regex.exec(line.text)
+      if(pay_month_match) {pay = Number( pay_month_match[1].replace(",","").replace(/\.$/, "") ).toFixed(2) * 12}
+    }
+    //Quarterly
+    if(pay == 0) {
+      let pay_quarter_regex = /£([\d,\.]+)( gross a | \(gross\) a | a | per | paid per | paid in a | every | )(quarter)/gi
+      let pay_quarter_match = pay_quarter_regex.exec(line.text)
+      if(pay_quarter_match) {pay = Number(pay_quarter_match[1].replace(",","").replace(/\.$/, "")).toFixed(2) * 4}
+    }
+    //Weekly
+    if(pay == 0) {
+      let pay_quarter_regex = /£([\d,\.]+)( gross a | \(gross\) a | a | per | paid per | paid in a | every | )(week|weekly)/gi
+      let pay_quarter_match = pay_quarter_regex.exec(line.text)
+      if(pay_quarter_match) {pay = Number(pay_quarter_match[1].replace(",","").replace(/\.$/, "")).toFixed(2) * 52}
+    }
+    //Fallback
+    if(pay == 0) {
+      let pay_regex = (/£([\d,\.]+)/gi)
+      let pay_match = pay_regex.exec(line.text)
+      if(pay_match) {pay = +Number(pay_match[1].replace(/\,/g,"").replace(/\.$/gi, "")).toFixed(2)}
+    }
+
+    if (isNaN(pay)) {pay = 0}
+    return pay
   }
 
   addAll(jobs) {

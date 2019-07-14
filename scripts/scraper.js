@@ -11,6 +11,7 @@ const Jobs = require('./Jobs')
 const Shares = require('./Shares')
 const Donations = require('./Donations')
 const Visits = require('./Visits')
+const Gifts = require('./Gifts')
 
 const date_code = 190603
 
@@ -63,6 +64,18 @@ function createSections(name, id, lines) {
     donations.parse(lines)
     donations.addAll()
   }
+  if(sections["3. Gifts, benefits and hospitality from UK sources"]) {
+    lines = sections["3. Gifts, benefits and hospitality from UK sources"]
+    let gifts = new Gifts(name, id)
+    gifts.parse(lines)
+    gifts.addAll()
+  }
+  if(sections["5. Gifts and benefits from sources outside the UK"]) {
+    lines = sections["5. Gifts and benefits from sources outside the UK"]
+    let gifts = new Gifts(name, id)
+    gifts.parse(lines)
+    gifts.addAll()
+  }
   if(sections["4. Visits outside the UK"]) {
     lines = sections["4. Visits outside the UK"]
     let visits = new Visits(name, id)
@@ -104,6 +117,7 @@ function createSections(name, id, lines) {
     let id = await mp_obj.add()
 
     let mp_html = await getHTML("https://publications.parliament.uk/pa/cm/cmregmem/" + date_code + "/" + mp.link)
+    //let mp_html = await getHTML("https://publications.parliament.uk/pa/cm/cmregmem/" + date_code + "/garnier_mark.htm")
     const $ = cheerio.load(mp_html)
     let lines = []
 

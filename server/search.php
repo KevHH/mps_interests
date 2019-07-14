@@ -10,7 +10,7 @@ $query = htmlspecialchars($_GET["query"]);
 search($db, $query);
 
 function search($db, $query) {
-  $stmt = $db->prepare("SELECT mps.first_name, mps.last_name, mps.party, mps.constit, section, text FROM text LEFT JOIN mps ON mp_id = mps.id WHERE LOWER(text) LIKE ?");
+  $stmt = $db->prepare("SELECT mps.id, mps.first_name, mps.last_name, mps.party, mps.constit, section, text FROM text LEFT JOIN mps ON mp_id = mps.id WHERE LOWER(text) LIKE ?");
   $stmt->execute(array(
     "%" . $query . "%"
   ));
