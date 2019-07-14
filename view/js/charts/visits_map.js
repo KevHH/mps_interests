@@ -49,14 +49,20 @@
     d3.select("#visits_map_americas").attr("class", "bar_chart_btn")
   }))
   .call(d3.zoom().on('zoom', () => {
-    projection.scale(initialScale * d3.event.transform.k)
-    path = d3.geoPath().projection(projection)
-    svg.selectAll("path").attr("d", path)
-    globe.attr("r", projection.scale())
-    d3.select("#visits_map_europe").attr("class", "bar_chart_btn")
-    d3.select("#visits_map_middle_east").attr("class", "bar_chart_btn")
-    d3.select("#visits_map_east_asia").attr("class", "bar_chart_btn")
-    d3.select("#visits_map_americas").attr("class", "bar_chart_btn")
+    if(d3.event.transform.k > 0.3) {
+      console.log(d3.event.transform.k)
+      projection.scale(initialScale * d3.event.transform.k)
+      path = d3.geoPath().projection(projection)
+      svg.selectAll("path").attr("d", path)
+      globe.attr("r", projection.scale())
+      d3.select("#visits_map_europe").attr("class", "bar_chart_btn")
+      d3.select("#visits_map_middle_east").attr("class", "bar_chart_btn")
+      d3.select("#visits_map_east_asia").attr("class", "bar_chart_btn")
+      d3.select("#visits_map_americas").attr("class", "bar_chart_btn")
+    }
+    else {
+      d3.event.transform.k = 0.3
+    }
   }))
 
   let map = svg.append("g")

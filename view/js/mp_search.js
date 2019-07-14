@@ -26,6 +26,14 @@ function mp_search(value) {
 
 function mpDisplaySearchResults(data, query) {
 
+  let property_line = data[1].property[0].total ? "<p><b>" + data[1].property[0].total + "</b> declared property interests. Totaling <b>" + data[1].property[0].quantity + "</b> properties.</p>" : "<p><b>No </b> declared property interests.</p>"
+
+  let shareholding_line = data[2].shares[0].total ? "<p><b>" + data[2].shares[0].total + "</b> declarations of sharholdings.</p>" : "<p><b>No </b> declared sharholdings.</p>"
+
+  let jobs_line = data[3].jobs[0].pay ? "<p><b>£" + Number(data[3].jobs[0].pay).toLocaleString() + "</b> of additional income declared in the past year from <b>" + data[3].jobs[0].total + "</b> jobs</p>" : "<p><b>No</b> outside income declared.</p>"
+
+  let donations_line = data[4].donations[0].amount ? "<p><b>£" + Number(data[4].donations[0].amount).toLocaleString() + "</b> of donations declared from <b>"+ data[4].donations[0].donors +"</b> donors</p>" : "<p><b>No</b> money received from donations</p>"
+
   $("#mp_search_results").append(
     "<div class='mp_card'>" +
       "<div class='card_content'>" +
@@ -35,10 +43,10 @@ function mpDisplaySearchResults(data, query) {
         "</div>" +
         "<div class='card_body'>" +
           "<p class='centered'><b>" + data[0].info[0].constit + "</b></p>" +
-          "<p><b>" + data[1].property[0].total + "</b> declared property interests. Totaling <b>" + data[1].property[0].quantity + "</b> properties.</p>" +
-          "<p><b>" + data[2].shares[0].total + "</b> declarations of sharholdings.</p>" +
-          "<p><b>£" + data[3].jobs[0].pay + "</b> of additional income declared in the past year from <b>" + data[3].jobs[0].total + "</b> jobs</p>" +
-          "<p><b>£" + data[4].donations[0].amount + "</b> of donations declared from <b>"+ data[4].donations[0].donors +"</b> donors</p>" +
+          property_line +
+          shareholding_line +
+          jobs_line +
+          donations_line +
         "</div>" +
       "</div> " +
     "</div>"
