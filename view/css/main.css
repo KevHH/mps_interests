@@ -10,13 +10,56 @@ body {
   padding: 0;
 }
 
+/* .container {
+  max-width: 1000px !important;
+} */
+
+a {
+  color: #55929b;
+}
+a:hover {
+  color: #55929b;
+}
+
 p {
   font-size: 1.2rem;
   color: #444;
+  line-height: 2rem;
+}
+
+.clipped {
+  padding: 0 15% 0 15%;
+}
+
+.left_float {
+  float: left;
+}
+.right_float {
+  float: right;
+}
+
+.quote_half {
+  width: 50%;
+  margin: 10px 20px 10px 20px !important;
 }
 
 .badge {
   color: #FFF;
+}
+
+.search_title {
+  font-size: 40px;
+  width: 100%;
+  border: none;
+  margin: 0 0 30px 0;
+  padding: 0 0 10px 0;
+  color: #55929b;
+  border-bottom: 5px solid #55929b;
+}
+
+.separator {
+  margin: 0 30% 0 30%;
+  border-top: 1px solid #777;
 }
 
 /* Charts general */
@@ -51,6 +94,11 @@ p {
   padding: 15px 20px 15px 10px;
   font-weight: 200;
   border: none;
+}
+
+.banner p {
+  padding: 0 0 0 15px;
+  margin: 0 0 0 50px;
 }
 
 .quote {
@@ -257,7 +305,7 @@ td {
   padding: 15px;
   border-radius: 7px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.21);
-  margin: 0 auto;
+  margin: 40px auto 0 auto;
 }
 
 .card_content {
@@ -313,6 +361,9 @@ td {
 /* Search Styles */
 #search_outer_container {
   background-color: #55929b;
+  border-top: 5px solid #55929b;
+  border-bottom: 5px solid #55929b;
+  margin: 50px 0 50px 0;
 }
 #search_container {
   background-color: #FFF;
@@ -342,7 +393,7 @@ td {
 }
 
 #mp_search_results {
-  min-height: 400px;
+  min-height: 550px;
 }
 
 #search_results {
@@ -379,6 +430,10 @@ td {
 
 .highlight {
   background-color: #f7f737;
+}
+
+#sources {
+  margin-bottom: 300px;
 }
 
 /* Charts */
@@ -530,4 +585,35 @@ td {
   border-color: #CCCCCC;
   fill: #CCCCCC;
   stroke: #CCCCCC;
+}
+
+.strong_agree {
+  background-color: #2f5597;
+  color: #FFF;
+  font-weight: bold;
+  padding: 3px;
+}
+.agree {
+  background-color: #b4c7e7;
+  color: #777;
+  font-weight: bold;
+  padding: 3px;
+}
+.neither {
+  background-color: #e7e6e6;
+  color: #777;
+  font-weight: bold;
+  padding: 3px;
+}
+.disagree {
+  background-color: #f8cbad;
+  color: #777;
+  font-weight: bold;
+  padding: 3px;
+}
+.strong_disagree {
+  background-color: #c55a11;
+  color: #FFF;
+  font-weight: bold;
+  padding: 3px;
 }

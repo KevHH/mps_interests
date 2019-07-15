@@ -61,7 +61,8 @@
         .style("left", uk_projection([d.lon,d.lat])[0] + "px")
         .style("top", uk_projection([d.lon,d.lat])[1] + "px")
         .style("cursor", "default")
-        .html("<p>" + d.place + "</p><p>" + d.quantity + "</p>")
+        .style("border-color", "#55929b")
+        .html("<p>" + d.place + "</p><p><b>" + d.quantity + "</b> properties owned by MPs in this area.</p>")
       })
 
       points.on("mouseout", (d) => {

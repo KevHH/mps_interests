@@ -115,11 +115,12 @@
             let coords = d3.mouse(this)
 
             tooltip.style("width", "100px")
-            .html(country + " - " + total)
+            .html("<p><b>" + country + "</b></p>" + "<p><b>" + total + "</b> visits from UK MPs in the past 12 months</p>")
             .style("opacity", "0.7")
             .style("left", +coords[0] - 50 + "px")
             .style("top", +coords[1] + 50 + "px")
             .style("display", "block")
+            .style("border-color", colour_scale(total))
           }
         })
         .on('mouseout', function(d){
