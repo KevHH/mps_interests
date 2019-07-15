@@ -10,7 +10,7 @@ function search(value) {
   if(query.length > 2 && query != last_query) {
     $("#search_results").html("")
 
-    var jqxhr = $.get( "http://mps-interests.local/search/search.php?query=" + query)
+    var jqxhr = $.get( "/search/search.php?query=" + query)
     .done(function(data) {
       data = JSON.parse(data)
       displaySearchResults(data, query)

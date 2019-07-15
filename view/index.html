@@ -26,8 +26,10 @@
 
   <link rel="stylesheet" type="text/css" href="css/selectize.css" />
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
 
   <body>
     <!--[if lt IE 8]>
@@ -37,8 +39,8 @@
     <div class="banner">
       <div class="title_holder">
         <h1>Outside Interests</h1>
-        <h2>Exploring the Register of MPs' outside Interests and what it reveals about political transparency.</h2>
-        <p>by Michael Keith | 15th July 2019</p>
+        <h2>What the Register of MPs' Interests reveals about transparency in Parliament.</h2>
+        <p>by Michael Keith | <a href="https://twitter.com/_mkeith_" style="color:#444444"><i class="fab fa-twitter"></i> <a href="https://github.com/michael-keith/mps_interests" style="color:#444444"><i class="fab fa-github"></i></a> | 15th July 2019</p>
       </div>
     </div>
 
@@ -67,7 +69,7 @@
       <h2 class="quote_title">- House of Commons Code of Conduct (1st August 2018)</h2>
     </div>
 
-    <p><a href="https://api.parliament.uk/historic-hansard/commons/1911/aug/10/payment-of-members-1">“The only principle of payment in the public service is that you should make an allowance to a man to enable him to maintain himself comfortably and honourably, but not luxuriously, during the time he is rendering service to the State.”</a> This was the opinion of David Lloyd George as he made the case to Parliament that MPs should be granted a fixed salary so that they could focus more on their roles as elected representatives and less on their outside professions. Over a century later the idea of paying salaries to MPs is widely accepted, yet many MPs have not adopted the humble comfort and honour envisaged by Lloyd George. MPs still hold jobs outside of Parliament and many have large business interests or benefit in one way or another from the perks of their political lives. The potential for conflict of interests between MPs personal and political roles has been understood since the inception of Parliament and various measures have been taken to ensure transparency from elected representatives. Currently, the main method is to have all MPs declare anything which could <a href="https://publications.parliament.uk/pa/cm199798/cmselect/cmstnprv/030ii/sp01104.htm">“reasonably be thought by others to influence”</a> their actions in the <a href="https://www.parliament.uk/mps-lords-and-offices/standards-and-financial-interests/parliamentary-commissioner-for-standards/registers-of-interests/register-of-members-financial-interests/">Register of Members' Interests</a>. The Register is intended to be a comprehensive, publicly available document allowing anyone to investigate the financial dealings of MPs and ensure the accountability and transparency of Parliament. However, this is not always the case. Far from ensuring that MPs are free from outside interference, the Register reveals the role outside business dealings have on UK politics and how easy it is for MPs to avoid public accountability on these issues.
+    <p><a href="https://api.parliament.uk/historic-hansard/commons/1911/aug/10/payment-of-members-1">“The only principle of payment in the public service is that you should make an allowance to a man to enable him to maintain himself comfortably and honourably, but not luxuriously, during the time he is rendering service to the State.”</a> This was the opinion of David Lloyd George as he made the case to Parliament that MPs should be granted a fixed salary so that they could focus more on their roles as elected representatives and less on their outside professions. Over a century later the idea of paying salaries to MPs is widely accepted, yet many have not adopted the humble comfort and honour envisaged by Lloyd George. MPs still hold jobs outside of Parliament and many have large business interests or benefit in one way or another from the perks of their political lives. The potential for conflict of interests to arise in these circumstances has been understood since the inception of Parliament and various measures have been taken to ensure transparency from elected representatives. Currently, the main method is to have all MPs declare, in the <a href="https://www.parliament.uk/mps-lords-and-offices/standards-and-financial-interests/parliamentary-commissioner-for-standards/registers-of-interests/register-of-members-financial-interests/">Register of Members' Interests</a>, anything which could <a href="https://publications.parliament.uk/pa/cm199798/cmselect/cmstnprv/030ii/sp01104.htm">“reasonably be thought by others to influence”</a> their actions, speeches or behaviour in Parliament. The Register is intended to be a comprehensive, publicly available document allowing anyone to investigate the financial dealings of MPs and ensure the accountability and transparency of the political system. However, this is not always the case. Far from ensuring that MPs are free from outside interference, the Register reveals the role outside business dealings have on UK politics and how easy it is for MPs to avoid public accountability on these issues.
     </p>
   </div>
 </div>
@@ -97,8 +99,8 @@
             <p><span class="badge Conservative mb-2">Conservative MPs:</span></p>
             <div class="row mb-4">
               <div class="col-sm-6 col-xs-12">
-                <p class="stat_text stat_color bold centered">97%</p>
-                <p class="stat_small_text sub_colour centered">(301/312)</p>
+                <p class="stat_text stat_color bold centered">94%</p>
+                <p class="stat_small_text sub_colour centered">(295/312)</p>
               </div>
               <div class="col-sm-6 col-xs-12">
                 <div id="con_small_pie" class="mini_pie"></div>
@@ -109,8 +111,8 @@
             <p><span class="badge Labour mb-2">Labour MPs:</span></p>
             <div class="row mb-4">
               <div class="col-sm-6 col-xs-12">
-                <p class="stat_text stat_color bold centered">87%</p>
-                <p class="stat_small_text sub_colour centered">(315/348)</p>
+                <p class="stat_text stat_color bold centered">88%</p>
+                <p class="stat_small_text sub_colour centered">(218/247)</p>
               </div>
               <div class="col-sm-6 col-xs-12">
                 <div id="lab_small_pie" class="mini_pie"></div>
@@ -124,8 +126,8 @@
             <p><span class="badge Scottish mb-2">SNP MPs:</span></p>
             <div class="row mb-4">
               <div class="col-sm-6 col-xs-12">
-                <p class="stat_text stat_color bold centered">86%</p>
-                <p class="stat_small_text sub_colour centered">(30/35)</p>
+                <p class="stat_text stat_color bold centered">80%</p>
+                <p class="stat_small_text sub_colour centered">(28/35)</p>
               </div>
               <div class="col-sm-6 col-xs-12">
                 <div id="snp_small_pie" class="mini_pie"></div>
@@ -146,6 +148,60 @@
           </div>
         </div>
 
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <p><span class="badge Independent mb-2">Independent MPs<br>(including TIG):</span></p>
+            <div class="row mb-4">
+              <div class="col-sm-6 col-xs-12">
+                <p class="stat_text stat_color bold centered">65%</p>
+                <p class="stat_small_text sub_colour centered">(13/20)</p>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                <div id="ind_small_pie" class="mini_pie"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <p><span class="badge DUP mb-2">DUP MPs:</span></p>
+            <div class="row mb-5">
+              <div class="col-sm-6 col-xs-12">
+                <p class="stat_text stat_color bold centered">100%</p>
+                <p class="stat_small_text sub_colour centered">(10/10)</p>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                <div id="dup_small_pie" class="mini_pie"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <p><span class="badge Plaid mb-2">Plaid Cymru MP:</span></p>
+            <div class="row mb-4">
+              <div class="col-sm-6 col-xs-12">
+                <p class="stat_text stat_color bold centered">75%</p>
+                <p class="stat_small_text sub_colour centered">(3/4)</p>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                <div id="plaid_small_pie" class="mini_pie"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <p><span class="badge Green mb-2">Green MPs:</span></p>
+            <div class="row mb-5">
+              <div class="col-sm-6 col-xs-12">
+                <p class="stat_text stat_color bold centered">100%</p>
+                <p class="stat_small_text sub_colour centered">(1/1)</p>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                <div id="green_small_pie" class="mini_pie"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="footnote">
           *all figures based on the June 17th version of the Register of Interests
         </div>
@@ -157,7 +213,7 @@
     <div class="col-md-6 text_block_right">
       <p>The <a href="https://publications.parliament.uk/pa/cm/cmregmem/190617/contents.htm">current version of the Register of Interests</a>, as of the 17th June 2019, shows that 90% of MPs (587 out of 650) are declaring some form of outside interest, this could include anything from paid employment, shareholdings, gifts, donations, property ownership or foreign visits. The extent and value of these interests varies significantly between MPs, but the number of declarations show that this is not a problem specific to one party. The majority of MPs are declaring something which could reasonably be seen to influence their actions.</p>
 
-      <p>The Register of Interests is also not an infallible source. Working out the real extent of these declarations is a challenge in and of itself, even the first step of accurately reading the entries is difficult. The data is hard to decipher, there is no set format for declarations, some MPs give detailed entries, others are relatively vague. Some MPs report gross income, some net. Some report annual figures, others monthly or quarterly. There's also no formal auditing process, the details have to be taken at face value or investigated privately and then taken up with the Commissioner for Standards.  Altogether, this makes it near impossible to get a complete and accurate overview of exactly what MPs earn outside of Parliament, how much time they spend working other jobs and exactly what they are doing. Yet through scraping the data it's possible to make some estimations about things such as MPs' outside employment, their property interests and the gifts they receive as part of their parliamentary work. Looking at this data altogether provides an insight into the nature of the problem and the extent to which outside interests affect the political process in the UK.
+      <p>The Register is also not an infallible source. Working out the real extent of these declarations is a challenge in itself, even the first step of accurately reading the entries is difficult. The data is hard to decipher, there is no set format for declarations, some MPs give detailed entries, others are relatively vague. Some MPs report gross income, some net. Some report annual figures, others monthly or quarterly. There's also no formal auditing process, the details have to be taken at face value or investigated privately and then taken up with the Commissioner for Standards.  Altogether, this makes it near impossible to get a complete and accurate overview of exactly what MPs earn outside of Parliament, how much time they spend working other jobs and exactly what they are doing. Yet through scraping the data it's possible to make some estimations about MPs' outside employment, their property interests and the gifts they receive as part of their parliamentary work..
       </p>
     </div>
   </div>
@@ -240,7 +296,7 @@
         It's easy to see how conflicts of interest could arise here, especially as the entries in the Register don't specify exactly what MPs are doing at these jobs and large sums of money are involved. For instance, Sir Nicholas Soames holds a non-executive position at GardaWorld (formerly known as AEGIS Defence Services Ltd) a company which <a href="https://www.bbc.co.uk/news/business-11521579">allegedly benefited greatly from the Iraq war</a>. Yet Soames often <a href="https://hansard.parliament.uk/search/MemberContributions?memberId=116&startDate=2014-07-13&endDate=2019-07-13&type=Spoken&searchTerm=army&outputType=List&partial=False">raises questions in Parliament regarding defence and army spending</a>. Soames position at GardaWorld alone pays him approximately £110,000 annually. Jacob Rees Mogg spends 30 hours a month working as a partner for his firm Somerset Capital Management LLP and has <a href="https://www.theguardian.com/politics/2017/jul/09/jacob-rees-mogg-denies-potential-conflict-of-interest-fund-links">frequently had to deny claims that his position at the investment firm presents a potential conflict of interest with his political career</a>.
       </p>
 
-      <p>The claims that restricting MPs from holding second jobs would prevent those in certain profession, such as those who've started a business, or doctors, nurses or barristers from entering politics is also suspect. While a handful of MPs maintain their previous professions, sometimes to retain professional licenses, the majority of MPs who work outside jobs, and make a lot of money doing so, work in either executive directorship or other consultancy positions.</p>
+      <p>The arguement that restricting MPs from holding second jobs would prevent those in certain profession, such as those who've started a business, or doctors, nurses or barristers from entering politics is not reflected in the data. While a handful of MPs maintain their previous professions, sometimes to retain professional licenses, the majority of MPs who work outside jobs, and make a lot of money doing so, work in either executive directorship or other consultancy positions.</p>
 
       <p>Yet this isn't entirely an issue about the amount of money MPs earn, it also raises the question of how seriously they take their position position as an elected representative. This is perhaps best demonstrated by Douglas Ross, the Scottish Conservative MP for Moray, who moonlights outside of parliament as an assistant football referee for both the Scottish Football Association and UEFA. As an assistant referee Ross earned approximately £22,000 in the last 12 months, working 2 – 3 times per month. This could arguably be considered perfectly acceptable, if it weren't the case that Ross has missed parliamentary sessions in favour of refereeing football games. This point was <a href="https://www.bbc.co.uk/news/uk-scotland-scotland-politics-41660040">brought up in Parliament by SNP MP John McNally</a> and Ross subsequently <a href="http://www.insidemoray.com/douglas-ross-ill-give-up-my-world-cup-dreams-for-moray/">promised to give up refereeing when Parliament was sitting</a>. However many MPs still criticised Ross for having taken so long to realise that his job as an MP outweighed his position as an assistant referee. It seemed that, until it was brought to the attention of the rest of Parliament and the press, Ross was happy to forgo his duties as an MP to attend football matches.
       </p>
@@ -262,7 +318,7 @@
             <p><b>32</b> company directors (including non-executive directorships)</p>
             <p><b>19</b> consultants</p>
             <p><b>19</b> councillors</p>
-            <p><b>16</b> authors (receving royalties from having written a book)</p>
+            <p><b>16</b> authors (receving royalties from published books)</p>
             <p><b>3</b> NHS doctors</p>
             <p><b>1</b> nurse</p>
             <p><b>1</b> barrister</p>
@@ -321,9 +377,9 @@
     </div>
 
     <div class="col-md-6">
-      <p>In 2016, Parliament was voting on various amendments to the Housing and Planing Bill. Labour MP and the shadow housing minister, Theresa Pearce, proposed an amendment, adding a clause which would <a href="https://www.theyworkforyou.com/debates/?id=2016-01-12b.786.2">“...place a duty on landlords to ensure that their properties are fit for habitation when let and remain fit during the course of the tenancy.”</a> The amendment failed to pass a vote in the Commons, with Conservative MPs voting with their party against the Labour amendment. Yet controversy arose when it was found that <a href="https://www.independent.co.uk/news/uk/politics/tories-vote-down-law-requiring-landlords-make-their-homes-fit-for-human-habitation-a6809691.html">72 of the Conservative MPs who voted down the clause were landlords themselves.</a> Many critics pointed out this potential conflict of interest and the potential concern that these MPs were using their position to vote in favour of their own financial interests.</p>
+      <p>In 2016, Parliament was voting on various amendments to the Housing and Planing Bill. Labour MP and the shadow housing minister, Theresa Pearce, proposed an amendment, adding a clause which would <a href="https://www.theyworkforyou.com/debates/?id=2016-01-12b.786.2">“...place a duty on landlords to ensure that their properties are fit for habitation when let and remain fit during the course of the tenancy.”</a> The amendment failed to pass a vote in the Commons, with Conservative MPs voting with their party against the Labour amendment. Yet controversy arose when it was found that <a href="https://www.independent.co.uk/news/uk/politics/tories-vote-down-law-requiring-landlords-make-their-homes-fit-for-human-habitation-a6809691.html">72 of the Conservative MPs who voted down the clause were landlords themselves.</a> Many critics pointed out this potential conflict of interest and suggested MPs were using their position to vote in favour of their own financial interests.</p>
 
-      <p>Yet following a brief outcry, little changed. Currently, almost 1 in 5 MPs are landlords, receiving at least £10,000 a year in income from rental property. Many MPs own more than one property and some have large buy-to-rent portfolios. The vast majority of these properties are in London, but certain other areas have been a focus point for entrepreneurial MPs seeking to make some additional income from the expanding rental market.</p>
+      <p>Yet following a brief outcry, little changed. Currently, almost 1 in 5 MPs (120 out of 650) are landlords, receiving at least £10,000 a year in income from rental property. Many MPs own more than one property and some have large buy-to-rent portfolios. The vast majority of these properties are in London, but certain other areas have been a focus point for entrepreneurial MPs seeking to make some additional income from the expanding rental market.</p>
 
       <p>For instance, Jeremy Hunt registered seven apartments, owned through Mare Pond Properties Ltd, a company he jointly owns with his wife, in Southampton, a short distance away from his Constituency of South West Surrey.</p>
 
@@ -345,7 +401,7 @@
 
       <p>Nadhim Zahawi, the Conservative MP for Stratford-on-Avon and one of the founders of YouGov, is the MP who currently owns the most property of all MPs, declaring 12 properties across the UK, with <a href="https://www.theguardian.com/politics/2017/jan/03/tory-mp-nadhim-zahawi-owns-property-worth-more-than-25m">some sources claiming that Zahawi's property portfolio has a value of over 25 million pounds</a>. All of these properties are rented out through Zahawi & Zahawi Ltd, a property company Zahawi founded with his wife.</p>
 
-      <p>In fact the property management business is one of the most popular industries in which MPs find outside employment. Sir Gary Streeter, the Conservative MP for South West Devon, <a href="https://www.independent.co.uk/news/uk/politics/uk-housing-crisis-theresa-may-policy-challenge-young-voters-support-a8400766.html">was one of 10 MPs, who, in June 2018 called for Theresa May to support alternative approaches to solve issues with Britain's housing market.</a> The main idea championed by Sir Streeter was the rent-to-buy scheme offered by the company Rentplus. Sir Gary Streeter has some history with the company, attending many of their events and appearing their promotional videos. In 2016, Sir Gary Streeter spoke about the company in the House of Commons calling it: <a href="https://hansard.parliament.uk/Commons/2016-01-05/debates/16010534000003/HousingAndPlanningBill?highlight=rentplus#contribution-16010542000063">“...a very innovative scheme and the kind of product I am sure the Government would want to promote.”</a> At a Rentplus event for completion of new properties in Plymouth, Sir Streeter said, <a href="https://rentplus-uk.com/news/89/16/Rentplus-affordable-housing-has-been-given-the-VIP-seal-of-approval">“The sooner the Rentplus model is rolled out throughout the UK, the better for the coming generation.”</a> Four months later Sir Streeter has now joined the company as a non-executive director, seemingly happy to convert his previous support for the company into a pay-cheque of £30,000 per year for 20 hours of work a month.</p>
+      <p>In fact the property management business is one of the most popular industries in which MPs find outside employment and often drifts into MPs work in Parliament. For instance, Sir Gary Streeter, the Conservative MP for South West Devon, <a href="https://www.independent.co.uk/news/uk/politics/uk-housing-crisis-theresa-may-policy-challenge-young-voters-support-a8400766.html">was one of 10 MPs, who, in June 2018 called for Theresa May to support alternative approaches to solve issues with Britain's housing market.</a> The main idea championed by Sir Streeter was the rent-to-buy scheme offered by the company Rentplus. Sir Gary Streeter has some history with the company, attending many of their events and appearing their promotional videos. In 2016, Sir Gary Streeter spoke about the company in the House of Commons calling it: <a href="https://hansard.parliament.uk/Commons/2016-01-05/debates/16010534000003/HousingAndPlanningBill?highlight=rentplus#contribution-16010542000063">“...a very innovative scheme and the kind of product I am sure the Government would want to promote.”</a> At a Rentplus event for completion of new properties in Plymouth, Sir Streeter said, <a href="https://rentplus-uk.com/news/89/16/Rentplus-affordable-housing-has-been-given-the-VIP-seal-of-approval">“The sooner the Rentplus model is rolled out throughout the UK, the better for the coming generation.”</a> Four months later Sir Streeter has now joined the company as a non-executive director, seemingly happy to convert his previous support for the company into a pay-cheque of £30,000 per year for 20 hours of work a month.</p>
     </div>
   </div>
 </div>
@@ -1101,13 +1157,13 @@
 <div class="container">
   <div class="row">
     <div id="studies" class="col-md-12">
-      <p>This is just a fraction of the list of declarations made by MPs. Understanding and uncovering the full extent of MPs' outside financial involvements would require hours of further investigative work. Equally, the Register is not reliable, MPs often fail to make declarations on time or provide the necessary information. The inaccessibility of the register accompanied by this lax enforcement of the rules contributes a wider lack of transparency and general distrust in politics as a whole.</p>
+      <p>This is just a fraction of the list of declarations made by MPs. Understanding and uncovering the full extent of MPs' outside financial involvements would require hours of further investigative work. Equally, the Register is not reliable, MPs often fail to make declarations on time or provide the necessary information. The inaccessibility of the register accompanied by this lax enforcement of the rules contributes to a wider lack of transparency and general distrust in politics as a whole.</p>
 
-      <p>Since the expenses scandal in 2009, this lack of trust has been something that Parliament has been keen to address. In 2018, the Committee on Standards in Public Life released it's <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/721697/CSPL_MPs__outside_interests_-_full_report.PDF">19th report on the subject of MPs' outside interests</a>. The report made several recommendations specifically regarding the Register of Interests and it's accessibility, namely: “As a matter of urgency, the Register of Members’ Interests should be updated to ensure it is digitally accessible to the public and other MPs.” Other recommendations involved reviewing and updating the code of conduct to better inform MPs of the requirements on declaring interests. Yet despite this being a “matter of urgency” nothing has yet been done to make the Register more accessible or improve reporting of outside interests.</p>
+      <p>Since the expenses scandal in 2009, this lack of trust has been something that Parliament has been keen to address. In 2018, the Committee on Standards in Public Life released it's <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/721697/CSPL_MPs__outside_interests_-_full_report.PDF">19th report on the subject of MPs' outside interests</a>. The report made several recommendations specifically regarding the Register of Interests and it's accessibility, namely: “As a matter of urgency, the Register of Members’ Interests should be updated to ensure it is digitally accessible to the public and other MPs.” Other recommendations involved reviewing and updating the code of conduct to better inform MPs of the requirements on declaring interests. Yet despite this being a “matter of urgency” nothing has yet been done to make the Register more accessible or improve the methods or accuracy of reporting.</p>
 
       <div class="quote quote_half left_float">
         <h2 class="quote_body">"...there are people that are preventing change out of their own interests... It doesn't interest them to have a more accountable parliament.”</h2>
-        <h2 class="quote_title">- Martin Williams</h2>
+        <h2 class="quote_title">- Martin Williams, author of <i>Parliament Ltd</i></h2>
       </div>
 
       <p>This isn't the first time the critics have suggested that changes be made to the Register. In 2016, the Select Committee for Standards in Public Life held a session where various academics and journalists gave their feedback and opinions on the improvements which could be made to the transparency of parliament. Martin Williams was present at the meeting and pressed the Committee on the need for greater transparency of the system as a whole. Yet, nothing came of these suggestions. Williams has a theory about why change in this area might be so slow. “I think I, quite naively, went in [to the committee meeting] thinking they honestly wanted to do something... and I came out and thought 'ah, they don't actually care.'” Williams feels that the committee itself isn't particularly interesting in making any real changes, “I felt that they were almost wilfully blind to solutions” he says, “but to be honest the entire credibility of the committee is completely undermined by the fact that multiple members have been investigated for failing to declare stuff.” Williams is careful not to name anyone specifically here, but some committee members have been found in breach of the rules, most notably Geoffrey Cox, who, in 2016, failed to declare £400,000 of outside earnings. <a href="https://www.telegraph.co.uk/news/newstopics/mps-expenses/conservative-mps-expenses/12140118/Tory-MP-Geoffrey-Cox-will-only-have-to-apologise-after-failing-to-declare-hundreds-of-thousands-of-pounds.html">After investigating, the committee found that no conflict of interests was posed from Cox's failure to declare the income and chose not to formally punish the MP</a>. Williams sees this as a key part of the problem, “when I was on the committee...” says Williams, “obviously when you're speaking in Parliament you're under Parliamentary privilege, therefore you can call certain people corrupt and not fear libel, there are people I would have called corrupt and I wish I had... there are people that are preventing change out of their own interests... It doesn't interest them to have a more accountable parliament.”</p>
@@ -1122,7 +1178,7 @@
           <p><span class="disagree">disagreed</span></p>
           <p><span class="strong_disagree">strongly disagreed</span></p>
           <p style="margin-bottom: 20px">with the statement.</p>
-          <h2 class="chart_title">Responses to survey questions:</h2>
+          <h2 class="chart_title" style="margin-bottom: 25px">Responses to survey questions:</h2>
       </div>
 
       <p>Beyond the rules about MPs behaviour, the ultimate test should be whether or not the electorate really care about what interests their elected representatives hold outside of Parliament. Cases like the expenses scandal prove that this is an issue the public care to some extent, but it's difficult to test whether this really affects they was in which people vote.</p>
@@ -1131,7 +1187,7 @@
 
       <div class="quote quote_half right_float">
         <h2 class="quote_body">"...it's not realistic to think that this will inform [ordinary voters] behaviour without being mediated by someone who can work out what's a story and what isn't.."</h2>
-        <h2 class="quote_title">- Prof. Rosie Campbell</h2>
+        <h2 class="quote_title">- Prof. Rosie Campbell, Kings College London</h2>
       </div>
 
       <p>Yet professor Campbell is hesitant to suggest that the findings of the surveys would have any real impact on voter behaviour and that a range of other factors are important to understanding how the electorate make decisions, particularly which party they represent. Professor Campbell ultimately believes that, in general, the public are only interested in the bigger financial scandals involving MPs and aren't too concerned about the relative income or wealth of their representatives unless it presents an immediate conflict of interest. “The good thing about the Register [of Members' of Interests]  isn't really that ordinary voters, or very many of them, are going to read this stuff, it's that journalists will and if it's shocking they'll try and make a story out of it. It's not realistic to think that this will inform their behaviour without being mediated by someone who can work out what's a story and what isn't.”</p>
@@ -1158,7 +1214,8 @@
     <div class="col-md-12">
       <h2 class="chart_title stat_color" style="border-color: #55929B">Sources:</h2>
       <p class="sub_color">All statistics relating to MPs' outside interests are estimates based on the version of the Register of Members' Financial interests published 17th of June 2019.</p>
-      <p><a href="https://github.com/michael-keith/mps_interests">Code for this project on Github.</a></p>
+      <p class="sub_color">All images created by Michael Keith. Charts created using <a href="https://d3js.org/">D3</a> and <a href="https://getbootstrap.com/">bootstrap</a>.</p>
+      <p class="sub_color"><a href="https://github.com/michael-keith/mps_interests">Code for this project on Github.</a></p>
       <p class="sub_color"><a href="https://www.amazon.co.uk/Parliament-Ltd-journey-British-politics/dp/1473633850"><i>Parliament Ltd</i>, Martin Williams, 2016</a></p>
       <p class="sub_color"><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/721697/CSPL_MPs__outside_interests_-_full_report.PDF">19th Report on Members' Outside interests by the Committe on Standards in Public life, 2018</a></p>
       <p class="sub_color"><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/721552/Final_Outside_Interests_Report__1_.pdf">Public Opinion with Respect to MPs’ Outside Interests: Insights from the British Election Study, Cees van der Eijk and Esmeralda V. Bon, 2017</a></p>

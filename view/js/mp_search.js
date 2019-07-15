@@ -10,7 +10,7 @@ function mp_search(value) {
   if(query != mp_last_query) {
     $("#mp_search_results").html("")
 
-    var jqxhr = $.get( "http://mps-interests.local/search/mp_search.php?query=" + query)
+    var jqxhr = $.get( "/search/mp_search.php?query=" + query)
     .done(function(data) {
       data = JSON.parse(data)
       mpDisplaySearchResults(data, query)

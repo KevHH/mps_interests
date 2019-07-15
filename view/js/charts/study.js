@@ -35,7 +35,7 @@
     "strongly disagree": 1.5}]
 
     let margin = {top: 20, right: 20, bottom: 20, left: 20}
-    let width = 450 + margin.left + margin.right
+    let width = 400 + margin.left + margin.right
 
     let body = d3.select("#study_lines")
     .style("width", width + "px")

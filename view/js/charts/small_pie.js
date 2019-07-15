@@ -3,6 +3,10 @@
   small_pie("lab_small_pie", "#dc241f", [215, 33])
   small_pie("snp_small_pie", "#d6d600", [30, 5])
   small_pie("lib_small_pie", "#fdbb30", [12])
+  small_pie("ind_small_pie", "#CCC", [13,7])
+  small_pie("dup_small_pie", "#d46a4c", [10])
+  small_pie("plaid_small_pie", "#008142", [3,1])
+  small_pie("green_small_pie", "#99cc33", [1])
 })()
 
 function small_pie(div_id, colour, data) {
