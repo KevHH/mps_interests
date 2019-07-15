@@ -35,7 +35,7 @@ function displaySearchResults(data, query) {
   for(d of data) {
     $("#search_results").append(
       "<div class='search_result " + d.party + "'>" +
-      "<p><span onclick='mp_search(" + d.id + ")' class='search_result_name'>" + d.first_name + " " + d.last_name + "</span> <span class='badge " + d.party + "'>" + d.party + "</span></p>" +
+      "<p><span onclick='mp_search(" + d.id + ")' class='search_result_name' style='cursor: pointer'>" + d.first_name + " " + d.last_name + "</span> <span class='badge " + d.party + "'>" + d.party + "</span></p>" +
       "<p class='search_result_section_title'>" + d.section + "</p>" +
       "<p>" + d.text.replace(regex, "<span class='highlight'>$1</span>") + "</p>" +
       "</div>"

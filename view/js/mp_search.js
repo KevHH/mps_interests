@@ -43,6 +43,7 @@ function mpDisplaySearchResults(data, query) {
         "</div>" +
         "<div class='card_body'>" +
           "<p class='centered'><b>" + data[0].info[0].constit + "</b></p>" +
+          "<p onclick='full_search(" + query + ")' class='card_full_link'>" + "View all declarations" + "</p>" +
           property_line +
           shareholding_line +
           jobs_line +
